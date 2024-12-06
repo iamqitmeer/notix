@@ -13,7 +13,7 @@ export function AIProvider({ children }) {
     setIsLoading(true)
     try {
       const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" })
-      const prompt = `Here are my current tasks: ${JSON.stringify(tasks)}. Please provide a suggestion to help me manage these tasks better.`
+      const prompt = `Here are my current tasks: ${JSON.stringify(tasks)}. Please provide 10 word paragraphic suggestion to help me manage these tasks better.`
       const response = await model.generateContent(prompt)
 
       setIsLoading(false)
